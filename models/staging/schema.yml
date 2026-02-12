@@ -1,0 +1,55 @@
+version: 2
+
+sources:
+    - name: ecommerce
+      schema: ecommerce_raw
+
+      tables:
+          - name: customers
+            description: "the customers table"
+          - name: orders
+            description: "the orders table"
+          - name: order_items
+            description: "the order_items table"
+          - name: products
+            description: "the products table"
+
+
+models:
+    - name: stg_customers
+      description: "The customers data"
+      columns:
+          - name: customer_id
+            description: "The primary key for this table"
+            data_tests:
+                - unique
+                - not_null
+    - name: stg_orders
+      description: "The order data"
+      columns:
+          - name: order_id
+            description: "The primary key for this table"
+            data_tests:
+                - unique
+                - not_null
+                
+    - name: stg_order_items
+      description: "The data for ordered items"
+      columns:
+          - name: order_item_id
+            description: "The primary key for this table"
+            data_tests:
+                - unique
+                - not_null
+    - name: stg_products
+      description: "The products data"
+      columns:
+          - name: product_id
+            description: "The primary key for this table"
+            data_tests:
+                - unique
+                - not_null
+    
+
+
+    

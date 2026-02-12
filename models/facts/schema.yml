@@ -1,0 +1,26 @@
+version: 2
+
+models:
+    - name: fct_orders
+      description: "The fact table for orders"
+      columns:
+          - name: order_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+          - name: order_status
+            description: "table order status"
+            tests:
+                - accepted_values:
+                    values: ['completed', 'cancelled', 'returned']
+    - name: fct_order_items
+      description: "The fact table for order items"
+      columns:
+          - name: order_item_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+          
+                      

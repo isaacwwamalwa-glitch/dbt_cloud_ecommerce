@@ -1,0 +1,11 @@
+version: 2
+
+models:
+    - name: mart_customer_acquisition
+      description: "finalised customer acquisition table"
+      columns:
+          - name: signup_channel
+            description: "column for ways of customer acquisition"
+            tests:
+                - accepted_values:
+                    values: ['organic', 'paid_ads', 'referral', 'social']
