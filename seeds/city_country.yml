@@ -1,0 +1,10 @@
+version: 2
+
+seeds:
+  - name: city_country
+    description: "Mapping of cities to countries"
+    columns:
+      - name: city
+        description: "City name"
+      - name: country
+        description: "Country name"

@@ -1,0 +1,30 @@
+version: 2
+
+models:
+    - name: dim_customers
+      description: "The dimension for customer table"
+      columns:
+          - name: customer_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+          - name: signup_channel
+            description: "column for ways of customer acquisition"
+            tests:
+                - accepted_values:
+                    values: ['organic', 'paid_ads', 'referral', 'social']
+    - name: dim_products
+      description: "The dimension for products table"
+      columns:
+          - name: product_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+          - name: brand
+            description: "product brands"
+            tests:
+                - accepted_values:
+                    values: ['Adidas', 'Apple', 'Dove', 'Nike', 'Nivea', 'Philips', 'Samsung', 'Sony']
+                      
